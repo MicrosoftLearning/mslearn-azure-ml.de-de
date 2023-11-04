@@ -12,6 +12,6 @@ Die Anweisungen für die Labübungen finden Sie unter [https://microsoftlearning
 
 ## Wie kann ich beitragen?
 
-- Jede Person kann einen Pull Request an den Code oder Inhalte im GitHub-Repository senden. Microsoft und der Kursautor bzw. die Kursautorin prüfen den Inhalt und den Labcode und nehmen nach Bedarf Änderungen vor.
+- Jede Person kann einen Pull Request an den Code oder Inhalte im GitHub-Repository senden. Microsoft und der Kursautor bzw. die Kursautorin prüfen den Inhalt und den Labcode und nehmen nach Bedarf Änderungen vor.
 
 - Sie können Fehler, Änderungen, Verbesserungen und Vorschläge einreichen.  Sie haben vor uns eine neue Azure-Funktion gefunden?  Reichen Sie eine neue Demo ein!

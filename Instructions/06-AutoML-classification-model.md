@@ -15,7 +15,7 @@ Sie benötigen ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-por
 
 ## Bereitstellung eines Azure Machine Learning-Arbeitsbereichs
 
-Ein Azure Machine Learning-*Arbeitsbereich* ist eine Zentrale zum Verwalten aller Daten- und anderen Ressourcen, die Sie zum Trainieren und Verwalten Ihrer Modelle benötigen. Sie können mit dem Azure Machine Learning-Arbeitsbereich über Studio, das Python SDK und die Azure CLI interagieren. 
+Ein Azure Machine Learning-*Arbeitsbereich* ist eine Zentrale zum Verwalten aller Daten- und anderen Ressourcen, die Sie zum Trainieren und Verwalten Ihrer Modelle benötigen. Sie können mit dem Azure Machine Learning-Arbeitsbereich über Studio, das Python SDK und die Azure CLI interagieren.
 
 Sie verwenden die Azure CLI, um den Arbeitsbereich und die erforderliche Compute-Instanz bereitzustellen, und das Python SDK, um ein Klassifizierungsmodell mit automatisiertem maschinellen Lernen zu trainieren.
 
@@ -25,7 +25,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
 
 1. Öffnen Sie in einem Browser unter `https://portal.azure.com/` das Azure-Portal, und melden Sie sich mit Ihrem Microsoft-Konto an.
 1. Wählen Sie oben auf der Seite rechts neben dem Suchfeld die Schaltfläche \[>_] (*Cloud Shell*) aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
-1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert. 
+1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert.
 1. Stellen Sie sicher, dass das gewünschte Abonnement angegeben ist, und wählen Sie **Speicher erstellen** aus, wenn Sie aufgefordert werden, Speicher für Ihre Cloud Shell zu erstellen. Warten Sie, bis der Speicher erstellt wurde.
 1. Geben Sie im Terminal die folgenden Befehle ein, um dieses Repository zu klonen:
 
@@ -34,7 +34,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
     ```
 
-    > Kopieren Sie mit `SHIFT + INSERT` Ihren Code in die Cloud Shell. 
+    > Kopieren Sie mit `SHIFT + INSERT` Ihren Code in die Cloud Shell.
 
 1. Nachdem das Repository geklont wurde, geben Sie die folgenden Befehle ein, um in den Ordner für dieses Lab zu wechseln. Führen Sie das darin enthaltene Skript **setup.sh** aus:
 
@@ -43,15 +43,15 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
     ./setup.sh
     ```
 
-    > Ignorieren Sie alle (Fehler-) Meldungen, die besagen, dass die Erweiterungen nicht installiert wurden. 
+    > Ignorieren Sie alle (Fehler-) Meldungen, die besagen, dass die Erweiterungen nicht installiert wurden.
 
-1. Warten Sie, bis das Skript abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten. 
+1. Warten Sie, bis das Skript abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten.
 
 ## Klonen der Labmaterialien
 
-Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt haben, können Sie Azure Machine Learning Studio öffnen und die Labmaterialien in den Arbeitsbereich klonen. 
+Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt haben, können Sie Azure Machine Learning Studio öffnen und die Labmaterialien in den Arbeitsbereich klonen.
 
-1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-labs**.
+1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
 1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
 1. Schließen Sie alle Popupelemente, die in Studio angezeigt werden.
 1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Compute-Instanz und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Compute-Instanz sollte ausgeführt werden, der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
@@ -69,9 +69,9 @@ Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt ha
 
     ```
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
-    ``` 
+    ```
 
-1. Wenn der Befehl abgeschlossen ist, klicken Sie im Bereich **Dateien** auf **&#8635;** , um die Ansicht zu aktualisieren und sicherzustellen, dass der neue Ordner **Users/*Ihr-Benutzername*/azure-ml-labs** erstellt wurde. 
+1. Wenn der Befehl abgeschlossen ist, klicken Sie im Bereich **Dateien** auf **&#8635;** , um die Ansicht zu aktualisieren und sicherzustellen, dass der neue Ordner **Users/*Ihr-Benutzername*/azure-ml-labs** erstellt wurde.
 
 ## Trainieren eines Klassifizierungsmodells mit automatisiertem maschinellen Lernen
 
@@ -79,19 +79,20 @@ Sie verfügen nun über alle erforderlichen Ressourcen und können das Notebook 
 
 1. Öffnen Sie das Notebook **Labs/06/Classification with Automated Machine Learning.ipynb**.
 
-    > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden. 
+    > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet. 
-1. Führen Sie alle Zellen im Notebook aus. 
+1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet.
+1. Führen Sie alle Zellen im Notebook aus.
 
-Im Azure Machine Learning-Arbeitsbereich wird ein neuer Auftrag erstellt. Der Auftrag verfolgt die in der Auftragskonfiguration definierten Eingaben, die verwendete Datenressource und die Ausgaben wie Metriken zum Auswerten der Modelle nach.
+    Im Azure Machine Learning-Arbeitsbereich wird ein neuer Auftrag erstellt. Der Auftrag verfolgt die in der Auftragskonfiguration definierten Eingaben, die verwendete Datenressource und die Ausgaben wie Metriken zum Auswerten der Modelle nach.
 
-Beachten Sie, dass die Aufträge zum automatisierten maschinellen Lernen untergeordnete Aufträge enthalten, die einzelne trainierte Modelle und andere zur Ausführung benötigte Aufgaben darstellen. 
-
-3. Wenn der Auftrag zum automatisierten maschinellen Lernen abgeschlossen ist, untersuchen Sie die Auftragsdetails in Studio:
+    Beachten Sie, dass die Aufträge zum automatisierten maschinellen Lernen untergeordnete Aufträge enthalten, die einzelne trainierte Modelle und andere zur Ausführung benötigte Aufgaben darstellen.
+1. Wechseln Sie zu **Aufträge** und wählen Sie das Experiment **auto-ml-class-dev** aus.
+1. Wählen Sie den Auftrag in der Spalte **Anzeigename** aus.
+1. Warten Sie, bis sich der Status in **Abgeschlossen** ändert.
+1. Wenn der Status des Auftrags zum automatisierten maschinellen Lernen als **Abgeschlossen** gezeigt wird, untersuchen Sie die Auftragsdetails im Studio:
     - Auf der Registerkarte **Datenintegritätsschutz** wird angezeigt, ob es in Ihren Trainingsdaten Probleme gab.
-    - Auf der Registerkarte **Modelle** werden alle trainierten Modelle gezeigt.
-    - Wählen Sie für das beste Modell **Erklärung anzeigen** aus, um zu verstehen, welche Features den Zielwert am meisten beeinflusst haben.
+    - Auf der Registerkarte **Modelle** werden alle trainierten Modelle gezeigt. Wählen Sie für das beste Modell **Erklärung anzeigen** aus, um zu verstehen, welche Features den Zielwert am meisten beeinflusst haben.
 
 ## Löschen von Azure-Ressourcen
 
@@ -99,6 +100,6 @@ Wenn Sie mit der Erkundung von Azure Machine Learning fertig sind, löschen Sie 
 
 1. Schließen Sie die Registerkarte „Azure Machine Learning Studio“, und kehren Sie zum Azure-Portal zurück.
 1. Wählen Sie auf der **Startseite** des Azure-Portals die Option **Ressource erstellen** aus.
-1. Wählen Sie die Ressourcengruppe **rg-dp100-labs** aus.
-1. Wählen Sie oben auf der Seite **Übersicht** für Ihre Ressourcengruppe die Option **Ressourcengruppe löschen** aus. 
+1. Wählen Sie die Ressourcengruppe **rg-dp100-...** aus.
+1. Wählen Sie oben auf der Seite **Übersicht** für Ihre Ressourcengruppe die Option **Ressourcengruppe löschen** aus.
 1. Geben Sie den Namen der Ressourcengruppe ein, um zu bestätigen, dass Sie sie löschen möchten, und wählen Sie **Löschen** aus.
