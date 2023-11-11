@@ -15,17 +15,17 @@ Sie benötigen ein [Azure-Abonnement](https://azure.microsoft.com/free?azure-por
 
 ## Bereitstellung eines Azure Machine Learning-Arbeitsbereichs
 
-Ein Azure Machine Learning-*Arbeitsbereich* bietet eine Zentrale zum Verwalten aller Ressourcen und Datenbestände, die Sie zum Trainieren und Verwalten Ihrer Modelle benötigen. Sie können mit dem Azure Machine Learning-Arbeitsbereich über Studio, das Python SDK und die Azure CLI interagieren. 
+Ein Azure Machine Learning-*Arbeitsbereich* ist eine Zentrale zum Verwalten aller Daten- und anderen Ressourcen, die Sie zum Trainieren und Verwalten Ihrer Modelle benötigen. Sie können mit dem Azure Machine Learning-Arbeitsbereich über Studio, das Python SDK und die Azure CLI interagieren.
 
-Sie verwenden die Azure CLI, um den Arbeitsbereich und die erforderliche Compute-Instanz bereitzustellen, und das Python SDK, um ein Klassifizierungsmodell mit Automated Machine Learning zu trainieren.
+Sie verwenden die Azure CLI, um den Arbeitsbereich und die erforderliche Compute-Instanz bereitzustellen, und das Python SDK, um ein Klassifizierungsmodell mit automatisiertem maschinellen Lernen zu trainieren.
 
 ### Erstellen des Arbeitsbereichs und der Computeressourcen
 
 Zum Erstellen des Azure Machine Learning-Arbeitsbereichs und der Computeressourcen verwenden Sie die Azure CLI. Alle erforderlichen Befehle sind in einem Shellskript gruppiert, das Sie ausführen können.
 
-1. Öffnen Sie in einem Browser das Azure-Portal unter `https://portal.azure.com/`, und melden Sie sich mit Ihrem Microsoft-Konto an.
+1. Öffnen Sie in einem Browser unter `https://portal.azure.com/` das Azure-Portal, und melden Sie sich mit Ihrem Microsoft-Konto an.
 1. Wählen Sie oben auf der Seite rechts neben dem Suchfeld die Schaltfläche \[>_] (*Cloud Shell*) aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
-1. Wählen Sie **Bash** aus, wenn Sie dazu aufgefordert werden. Wenn Sie die Cloud Shell zum ersten Mal öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert. 
+1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert.
 1. Stellen Sie sicher, dass das gewünschte Abonnement angegeben ist, und wählen Sie **Speicher erstellen** aus, wenn Sie aufgefordert werden, Speicher für Ihre Cloud Shell zu erstellen. Warten Sie, bis der Speicher erstellt wurde.
 1. Geben Sie im Terminal die folgenden Befehle ein, um dieses Repository zu klonen:
 
@@ -34,7 +34,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs und der Computeressourc
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
     ```
 
-    > Kopieren Sie mit `SHIFT + INSERT` Ihren Code in die Cloud Shell. 
+    > Kopieren Sie mit `SHIFT + INSERT` Ihren Code in die Cloud Shell.
 
 1. Nachdem das Repository geklont wurde, geben Sie die folgenden Befehle ein, um in den Ordner für dieses Lab zu wechseln. Führen Sie das darin enthaltene Skript **setup.sh** aus:
 
@@ -43,20 +43,20 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs und der Computeressourc
     ./setup.sh
     ```
 
-    > Ignorieren Sie alle (Fehler-) Meldungen, die besagen, dass die Erweiterungen nicht installiert wurden. 
+    > Ignorieren Sie alle (Fehler-) Meldungen, die besagen, dass die Erweiterungen nicht installiert wurden.
 
-1. Warten Sie, bis das Skript abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten. 
+1. Warten Sie, bis das Skript abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten.
 
 ## Klonen der Labmaterialien
 
 Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt haben, können Sie Azure Machine Learning Studio öffnen und die Labmaterialien klonen. 
 
-1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-labs**.
-1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. Eine weitere Registerkarte wird in Ihrem Browser geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
+1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
+1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
 1. Schließen Sie alle Popupelemente, die in Studio angezeigt werden.
-1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Computeressource und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Computeressource sollte ausgeführt werden, der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
+1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Compute-Instanz und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Compute-Instanz sollte ausgeführt werden, der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
 1. Navigieren Sie auf der Registerkarte **Compute-Instanzen** zu Ihrer Compute-Instanz, und wählen Sie die Anwendung **Terminal** aus.
-1. Installieren Sie im Terminal das Python SDK in der Compute-Instanz, indem Sie in Terminal die folgenden Befehle ausführen:
+1. Installieren Sie im Terminal das Python SDK in der Compute-Instanz, indem Sie die folgenden Befehle ausführen:
 
     ```
     pip uninstall azure-ai-ml
@@ -69,19 +69,19 @@ Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt ha
 
     ```
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
-    ``` 
+    ```
 
-1. Wenn der Befehl abgeschlossen ist, klicken Sie im Bereich **Dateien** auf **&#8635;** , um die Ansicht zu aktualisieren und sicherzustellen, dass der neue Ordner **Users/*Ihr-Benutzername*/azure-ml-labs** erstellt wurde. 
+1. Wenn der Befehl abgeschlossen ist, klicken Sie im Bereich **Dateien** auf **&#8635;** , um die Ansicht zu aktualisieren und sicherzustellen, dass der neue Ordner **Users/*Ihr-Benutzername*/azure-ml-labs** erstellt wurde.
 
 ## Arbeiten mit Umgebungen
 
-Der Code zum Erstellen und Verwalten von Umgebungen mit dem Python SDK wird in einem Notebook bereitgestellt. 
+Der Code zum Erstellen und Verwalten von Umgebungen mit dem Python SDK wird in einem Notebook bereitgestellt.
 
 1. Öffnen Sie das Notebook **Labs/04/Work with environments.ipynb**.
 
-    > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden. 
+    > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet. 
+1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet.
 1. Führen Sie alle Zellen im Notebook aus.
 
 ## Löschen von Azure-Ressourcen
@@ -90,7 +90,6 @@ Wenn Sie mit der Erkundung von Azure Machine Learning fertig sind, löschen Sie 
 
 1. Schließen Sie die Registerkarte „Azure Machine Learning Studio“, und kehren Sie zum Azure-Portal zurück.
 1. Wählen Sie auf der **Startseite** des Azure-Portals die Option **Ressource erstellen** aus.
-1. Wählen Sie die Ressourcengruppe **rg-dp100-labs** aus.
-1. Wählen Sie oben auf der Seite **Übersicht** für Ihre Ressourcengruppe die Option **Ressourcengruppe löschen** aus. 
+1. Wählen Sie die Ressourcengruppe **rg-dp100-...** aus.
+1. Wählen Sie oben auf der Seite **Übersicht** für Ihre Ressourcengruppe die Option **Ressourcengruppe löschen** aus.
 1. Geben Sie den Namen der Ressourcengruppe ein, um zu bestätigen, dass Sie sie löschen möchten, und wählen Sie **Löschen** aus.
-
