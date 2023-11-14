@@ -51,7 +51,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
 
 Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt haben, können Sie Azure Machine Learning Studio öffnen und die Labmaterialien in den Arbeitsbereich klonen. 
 
-1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
+1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
 1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
 1. Schließen Sie alle Popupelemente, die in Studio angezeigt werden.
 1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Compute-Instanz und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Compute-Instanz sollte ausgeführt werden, der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
