@@ -51,7 +51,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs und eines Computecluste
 
 Wenn Sie den Arbeitsbereich und erforderlichen Computecluster erstellt haben, können Sie Azure Machine Learning Studio öffnen und mit dem Designer eine Trainingspipeline erstellen.
 
-1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
+1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-...** .
 1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
 1. Schließen Sie alle Popupelemente, die in Studio angezeigt werden.
 1. Navigieren Sie in Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob der Computecluster vorhanden ist, den Sie im vorherigen Abschnitt erstellt haben. Der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
