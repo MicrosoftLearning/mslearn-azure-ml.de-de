@@ -88,15 +88,17 @@ Zum Erstellen der Compute-Instanz können Sie Studio, Python SDK oder die Azure 
     - **Computename:***Geben Sie einen eindeutigen Namen ein.*
     - **VM-Typ**: *CPU*
     - **VM-Größe**: *Standard_DS11_v2*
-1. Klicken Sie auf **Weiter: Erweiterte Einstellungen**.
+1. Wählen Sie **Weiter** aus.
 1. Wählen Sie **Zeitplan hinzufügen** aus, und konfigurieren Sie den Zeitplan so, dass die Compute-Instanz jeden Tag um **18:00** Uhr bzw. **6:00 PM** **beendet** wird.
-1. Wählen Sie die Umschaltfläche für **Mit Setupskript bereitstellen** aus.
-1. Wählen Sie das zuvor erstellte Skript **compute-setup.sh** aus.
-1. Überprüfen Sie die anderen erweiterten Einstellungen, aber aktivieren Sie sie **nicht**:
+1. Wählen Sie **Weiter** aus.
+1. Überprüfen Sie die Sicherheitseinstellungen, aber aktivieren Sie sie **nicht**:
     - **SSH-Zugriff aktivieren**: *Sie können über diese Option den Direktzugriff auf die VM mithilfe eines SSH-Clients aktivieren.*
     - **Virtuelles Netzwerk aktivieren**: *Diese Option wird in der Regel in einer Unternehmensumgebung verwendet, um die Netzwerksicherheit zu verbessern.*
     - **Einem anderen Benutzer zuweisen**: *Sie können diese Option verwenden, um eine Compute-Instanz einem anderen Data Scientist zuzuweisen.*
-1. **Erstellen** Sie die Compute-Instanz, und warten Sie, bis sie gestartet wurde und der Status sich in **Wird ausgeführt** geändert hat.
+1. Wählen Sie **Weiter** aus.
+1. Wählen Sie die Umschaltfläche für **Mit Erstellungsskript bereitstellen** aus.
+1. Wählen Sie das zuvor erstellte Skript **compute-setup.sh** aus.
+1. Wählen Sie **Überprüfen und erstellen** aus, um die Computeinstanz zu erstellen. Warten Sie, bis sie gestartet wurde und sich der Status in **Wird ausgeführt** geändert hat.
 1. Wenn die Compute-Instanz ausgeführt wird, navigieren Sie zur Seite **Notebooks**. Klicken Sie im Bereich **Dateien** auf **&#8635;** , um die Ansicht zu aktualisieren und sicherzustellen, dass der neue Ordner **Users/*Ihr-Benutzername*/dp100-azure-ml-labs** erstellt wurde.
 
 ## Konfigurieren der Compute-Instanz

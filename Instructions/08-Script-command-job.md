@@ -114,9 +114,10 @@ Nachdem Sie ein Notebook in ein Skript konvertiert haben, können Sie es weiter 
 
     Um das Skript erfolgreich auszuführen, müssen Sie Werte für die Trainingsdatenparameter angeben. Dazu verweisen wir auf die Datei **diabetes.csv**, die sich im selben Ordner wie das Trainingsskript befindet.
 
-1. Führen Sie folgenden Befehl im Terminal aus:
+1. Führen Sie im Terminal die folgenden Befehle aus:
 
     ```
+    cd azure-ml-labs/Labs/08/src/
     python train-model-parameters.py --training_data diabetes.csv
     ```
 
