@@ -22,7 +22,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs verwenden Sie die Azure
 1. Öffnen Sie in einem Browser unter `https://portal.azure.com/` das Azure-Portal, und melden Sie sich mit Ihrem Microsoft-Konto an.
 1. Wählen Sie oben auf der Seite rechts neben dem Suchfeld die Schaltfläche \[>_] (*Cloud Shell*) aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
 1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert.
-1. Stellen Sie sicher, dass das gewünschte Abonnement angegeben ist, und wählen Sie **Speicher erstellen** aus, wenn Sie aufgefordert werden, Speicher für Ihre Cloud Shell zu erstellen. Warten Sie, bis der Speicher erstellt wurde.
+1. Überprüfen Sie, ob das richtige Abonnement angegeben ist und ob **kein Speicherkonto** ausgewählt ist. Wählen Sie **Übernehmen**.
 1. Um Konflikte mit früheren Versionen zu vermeiden, entfernen Sie alle ML CLI-Erweiterungen (sowohl Version 1 als auch 2), indem Sie diesen Befehl im Terminal ausführen:
 
     ```azurecli
