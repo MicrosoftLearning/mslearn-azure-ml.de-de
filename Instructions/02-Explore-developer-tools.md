@@ -28,7 +28,7 @@ Damit ein Data Scientist ein Machine Learning-Modell mit Azure Machine Learning 
 1. Öffnen Sie in einem Browser das Azure-Portal unter `https://portal.azure.com/`, und melden Sie sich mit Ihrem Microsoft-Konto an.
 1. Wählen Sie oben auf der Seite rechts neben dem Suchfeld die Schaltfläche \[>_] (*Cloud Shell*) aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
 1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert.
-1. Stellen Sie sicher, dass das gewünschte Abonnement angegeben ist, und wählen Sie **Speicher erstellen** aus, wenn Sie aufgefordert werden, Speicher für Ihre Cloud Shell zu erstellen. Warten Sie, bis der Speicher erstellt wurde.
+1. Überprüfen Sie, ob das richtige Abonnement angegeben ist und ob **kein Speicherkonto** ausgewählt ist. Wählen Sie **Übernehmen**.
 1. Entfernen Sie alle ML CLI-Erweiterungen (sowohl Version 1 als auch 2), um Konflikte früherer Versionen mit diesem Befehl zu vermeiden:
     
     ```azurecli
