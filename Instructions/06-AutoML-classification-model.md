@@ -26,7 +26,7 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
 1. Öffnen Sie in einem Browser unter `https://portal.azure.com/` das Azure-Portal, und melden Sie sich mit Ihrem Microsoft-Konto an.
 1. Wählen Sie oben auf der Seite rechts neben dem Suchfeld die Schaltfläche \[>_] (*Cloud Shell*) aus. Dadurch wird am unteren Rand des Portals ein Cloud Shell-Bereich geöffnet.
 1. Wählen Sie bei Aufforderung **Bash** aus. Wenn Sie die Cloud Shell erstmals öffnen, werden Sie zur Wahl der gewünschten Shell (*Bash* oder *PowerShell*) aufgefordert.
-1. Überprüfen Sie, ob das richtige Abonnement angegeben ist und ob **Kein Speicherkonto erforderlich** ausgewählt ist. Wählen Sie **Übernehmen**.
+1. Überprüfen Sie, ob das richtige Abonnement angegeben ist und ob **kein Speicherkonto** ausgewählt ist. Wählen Sie **Übernehmen**.
 1. Geben Sie im Terminal die folgenden Befehle ein, um dieses Repository zu klonen:
 
     ```azurecli
@@ -92,7 +92,9 @@ Sie verfügen nun über alle erforderlichen Ressourcen und können das Notebook 
 1. Warten Sie, bis sich der Status in **Abgeschlossen** ändert.
 1. Wenn der Status des Auftrags zum automatisierten maschinellen Lernen als **Abgeschlossen** gezeigt wird, untersuchen Sie die Auftragsdetails im Studio:
     - Auf der Registerkarte **Datenintegritätsschutz** wird angezeigt, ob es in Ihren Trainingsdaten Probleme gab.
-    - Auf der Registerkarte **Modelle** werden alle trainierten Modelle gezeigt. Wählen Sie für das beste Modell **Erklärung anzeigen** aus, um zu verstehen, welche Features den Zielwert am meisten beeinflusst haben.
+    - Unter der Registerkarte **Modelle + untergeordnete Aufträge** werden alle geschulten Modelle angezeigt. Wählen Sie **Modell erklären** für das beste Modell aus und erstellen Sie die Erklärung-Auftragsausführung mit dem **aml-cluster**.
+    - Warten Sie, bis eine neue Spalte **Erläuterung** neben der Spalte **Algorithmusname** erscheint und wählen Sie **Erläuterung anzeigen**. Möglicherweise müssen Sie die Algorithmusliste aktualisieren, damit diese Option angezeigt wird.
+    - Überprüfen Sie das erstellte Dashboard, um zu verstehen, welche Features den Zielwert am meisten beeinflusst haben.
 
 ## Löschen von Azure-Ressourcen
 
