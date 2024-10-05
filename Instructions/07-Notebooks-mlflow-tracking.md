@@ -85,6 +85,8 @@ Sie verfügen nun über alle erforderlichen Ressourcen und können somit das Not
 1. Führen Sie alle Zellen im Notebook aus.
 1. Überprüfen Sie den neuen Auftrag, der jedes Mal erstellt wird, wenn Sie ein Modell trainieren.
 
+    > **Hinweis:** Wenn Sie ein Modell trainieren, zeigt die Ausgabe der Zelle einen Link zum Ausführen des Auftrags an. Wenn der Link einen Fehler zurückgibt, können Sie den Auftrag trotzdem überprüfen, indem Sie **Aufträge** auf der linken Seite wählen.
+    
 ## Löschen von Azure-Ressourcen
 
 Wenn Sie mit der Erkundung von Azure Machine Learning fertig sind, löschen Sie die erstellten Ressourcen, um unnötige Azure-Kosten zu vermeiden.
