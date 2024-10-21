@@ -90,6 +90,13 @@ Die Verwendung eines an eine Compute-Instanz angefügten Notebooks ist ideal fü
 1. Wählen Sie oben im Notebook das Symbol &#9655;&#9655; aus, um **das Skript im Terminal zu speichern und auszuführen**.
 1. Das Skript wird vom Befehl **python train-classification-model.py** eingeleitet, und die Ausgabe sollte unterhalb des Befehls angezeigt werden.
 
+   > **Hinweis:** Wenn das Skript einen ImportError für libstdc++6 zurückgibt, führen Sie die folgenden Befehle im Terminal aus, bevor Sie das Skript erneut ausführen:
+   > ```bash
+   > sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+   > sudo apt-get update
+   > sudo apt-get upgrade libstdc++6
+   > ```
+
 ## Testen eines Skripts mit dem Terminal
 
 Nachdem Sie ein Notebook in ein Skript konvertiert haben, können Sie es weiter optimieren. Eine bewährte Methode beim Arbeiten mit Skripts ist die Verwendung von Funktionen. Wenn Ihr Skript aus Funktionen besteht, können Sie Ihren Code einfacher testen. Wenn Sie Funktionen verwenden, besteht Ihr Skript aus Codeblöcken, die jeweils eine bestimmte Aufgabe ausführen.
