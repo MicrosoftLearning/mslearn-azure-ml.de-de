@@ -1,3 +1,11 @@
+#README
+
+We've turned off the ability to report issues directly on this repo and do not monitor PRs.
+
+Provide feedback here: https://aka.ms/provide-feedback
+
+Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
+
 ## Praktische Übungen zu Azure Machine Learning (v2)
 
 Dieses Repository enthält die Übungen zum Praxislab für die Microsoft-Lernpfade, die Azure Machine Learning untersuchen. Die Lernpfade bestehen aus Modulen zur eigenverantwortlichen Bearbeitung in Microsoft Learn. Diese Labs begleiten die Lernmaterialen und erleichtern die praktische Anwendung der beschriebenen Technologien.
