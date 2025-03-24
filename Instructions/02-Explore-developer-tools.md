@@ -112,13 +112,13 @@ Obwohl die Azure CLI ideal für die Automatisierung geeignet ist, sollten Sie di
 1. Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen **mlw-dp100-labs**.
 1. Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite **Übersicht** die Option **Studio starten** aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.
 1. Schließen Sie alle Popupelemente, die in Studio angezeigt werden.
-1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Compute-Instanz und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Computeressource sollte ausgeführt werden, der Cluster sollte sich mit 0 ausgeführten Knoten im Leerlauf befinden.
+1. Navigieren Sie innerhalb von Azure Machine Learning Studio zur Seite **Compute**, und überprüfen Sie, ob die Compute-Instanz und der Cluster vorhanden sind, die Sie im vorherigen Abschnitt erstellt haben. Die Compute-Instanz sollte ausgeführt werden, der Cluster sollte sich im Zustand „Succeeded“ befinden und 0 Knoten in Betrieb haben.
 
 ## Verwenden des Python SDK, um ein Modell zu trainieren
 
 Nachdem Sie sich vergewissert haben, dass die erforderliche Compute-Instanz erstellt wurde, können Sie nun mit dem Python SDK ein Trainingsskript ausführen. Sie installieren und verwenden das Python SDK auf der Compute-Instanz und trainieren das Machine Learning-Modell im Computecluster.
 
-1. Wählen Sie die **Terminalanwendung** für Ihre **Compute-Instanz** aus, um das Terminal zu starten.
+1. In Ihrer **Computeinstanz** gibt es eine Reihe von Optionen im Feld **Anwendungen**. Wählen Sie die Anwendung **Terminal** aus, um das Terminal zu starten (eventuell müssen Sie auf die Auslassungspunkte klicken, um die Auswahl zu erweitern).
 1. Installieren Sie im Terminal das Python SDK in der Compute-Instanz, indem Sie in Terminal die folgenden Befehle ausführen:
 
     ```
@@ -139,7 +139,7 @@ Nachdem Sie sich vergewissert haben, dass die erforderliche Compute-Instanz erst
 
     > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet. Jeder Kernel verfügt über ein eigenes Image mit einem eigenen vorinstallierten Paketsatz.
+1. Überprüfen Sie, ob das Notebook den **Python 3.8 - AzureML**-Kernel in der oberen rechten Ecke der Notebook-Umgebung verwendet. Jeder Kernel verfügt über ein eigenes Image mit einem eigenen vorinstallierten Paketsatz.
 1. Führen Sie alle Zellen im Notebook aus.
 
 Im Azure Machine Learning-Arbeitsbereich wird ein neuer Auftrag erstellt. Der Auftrag verfolgt die in der Auftragskonfiguration definierten Eingaben, den verwendeten Code und die Ausgaben wie Metriken zum Auswerten des Modells nach.
