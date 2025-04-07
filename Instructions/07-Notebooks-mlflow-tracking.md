@@ -9,7 +9,7 @@ Häufig starten Sie ein neues Data Science-Projekt, indem Sie mit mehreren Model
 
 In dieser Übung nutzen Sie MLflow in einem Notebook, das in einer Compute-Instanz ausgeführt wird, um das Modelltraining zu protokollieren.
 
-## Vorbereitung
+## Vor der Installation
 
 Sie benötigen ein [Azure-Abonnement](https://azure.microsoft.com/free), in dem Sie Administratorzugriff besitzen.
 
