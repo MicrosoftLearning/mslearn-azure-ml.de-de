@@ -60,6 +60,26 @@ Damit ein Data Scientist ein Machine Learning-Modell mit Azure Machine Learning 
 
 1. Warten Sie, bis der Arbeitsbereich und die zugehörigen Ressourcen erstellt wurden, was in der Regel etwa 5 Minuten dauert.
 
+    <details>  
+    <summary><b>Tipp zur Fehlerbehebung</b>: Fehler bei der Erstellung des Arbeitsbereichs</summary><br>
+    <p>Wenn Sie beim Erstellen eines Arbeitsbereichs über die Befehlszeilenschnittstelle einen Fehler erhalten, müssen Sie die Ressource manuell bereitstellen:</p>
+    <ol>
+        <li>Wählen Sie auf der Startseite des Azure-Portals die Option <b>+ Erstellen einer Ressource</b>.</li>
+        <li>Suchen Sie nach <i>Maschinelles Lernen</i> und wählen Sie dann <b>Azure Machine Learning</b>. Klicken Sie auf <b>Erstellen</b>.</li>
+        <li>Erstellen Sie eine neue Azure Machine Learning-Ressource mit den folgenden Einstellungen: <ul>
+                <li><b>Abonnement:</b> <i>Geben Sie Ihr Azure-Abonnement an.</i></li>
+                <li><b>Ressourcengruppe</b>: rg-dp100-labs</li>
+                <li><b>Arbeitsbereichsname</b>: mlw-dp100-labs</li>
+                <li><b>Region:</b><i>Wählen Sie die nächstgelegene geografische Region aus.</i></li>
+                <li><b>Speicherkonto:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neues Speicherkonto erstellt.</i></li>
+                <li><b>Schlüsseltresor:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neuer Schlüsseltresor erstellt.</i></li>
+                <li><b>Application Insights:</b><i>Für Ihren Arbeitsbereich wird standardmäßig eine neue Application Insights-Ressource erstellt.</i></li>
+                <li><b>Containerregistrierung:</b> Keine (<i>wird automatisch erstellt, wenn Sie das erste Mal ein Modell in einem Container bereitstellen</i>)</li>
+            </ul>
+        <li>Wählen Sie <b>Review + create</b> und warten Sie, bis der Arbeitsbereich und die ihm zugeordneten Ressourcen erstellt sind - dies dauert in der Regel etwa 5 Minuten.</li>
+    </ol>
+    </details>
+
 ## Erstellen einer Compute-Instanz mit der Azure CLI
 
 Ein weiterer wichtiger Teil der Infrastruktur, die zum Trainieren eines Machine Learning-Modells benötigt wird, sind **Computeressourcen**. Obwohl Sie Modelle lokal trainieren können, bietet die Verwendung von Cloudcomputing mehr Skalierbarkeit und Kosteneffizienz.
@@ -84,6 +104,19 @@ In dieser Übung erstellen Sie eine Compute-Instanz mit den folgenden Einstellun
 
     Wenn Sie eine Fehlermeldung erhalten, die besagt, dass eine Compute-Instanz mit dem Namen bereits vorhanden ist, ändern Sie den Namen, und wiederholen Sie den Befehl.
 
+    <details>  
+    <summary><b>Tipp zur Fehlerbehebung</b>: Fehler bei der Erstellung von Berechnungen</summary><br>
+    <p>Wenn Sie bei der Erstellung einer Computeinstanz über die CLI einen Fehler erhalten, müssen Sie die Ressource manuell bereitstellen:</p>
+    <ol>
+        <li>Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen <b>mlw-dp100-labs</b>.</li>
+        <li>Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite <b>Übersicht</b> die Option <b>Studio starten</b> aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.</li>
+        <li>Schließen Sie alle Popupelemente, die in Studio angezeigt werden.</li>
+        <li>Navigieren Sie in Azure Machine Learning Studio zur Seite <b>Compute</b> und wählen Sie <b>+Neu</b> unter der Registerkarte <b>Compute-Instanzen</b>.</li>
+        <li>Geben Sie der Instanz einen eindeutigen Namen und wählen Sie <b>Standard_DS11_v2</b> als Größe des virtuellen Computers.</li>
+        <li>Klicken Sie auf <b>Überprüfen und erstellen</b> und dann auf <b>Erstellen</b>.</li>
+    </ol>
+    </details>
+
 ## Erstellen eines Computeclusters mit der Azure CLI
 
 Eine Compute-Instanz ist zwar für die Entwicklung ideal, ein Computecluster eignet sich jedoch besser, wenn Machine Learning-Modelle trainiert werden sollen. Erst bei Übermittlung eines Auftrags zur Verwendung des Computeclusters wird die Größe auf mehr als 0 Knoten geändert und der Auftrag ausgeführt. Sobald der Computecluster nicht mehr benötigt wird, wird die Größe automatisch wieder auf 0 Knoten geändert, um die Kosten zu minimieren. 
@@ -104,6 +137,19 @@ Sie erstellen einen Computecluster mit den folgenden Einstellungen:
     ```azurecli
     az ml compute create --name "aml-cluster" --size STANDARD_DS11_V2 --max-instances 2 --type AmlCompute -w mlw-dp100-labs -g rg-dp100-labs
     ```
+
+    <details>  
+    <summary><b>Tipp zur Fehlerbehebung</b>: Fehler bei der Erstellung von Berechnungen</summary><br>
+    <p>Wenn Sie beim Erstellen eines Computeclusters über die CLI einen Fehler erhalten, müssen Sie die Ressource manuell bereitstellen:</p>
+    <ol>
+        <li>Navigieren Sie im Azure-Portal zum Azure Machine Learning-Arbeitsbereich mit dem Namen <b>mlw-dp100-labs</b>.</li>
+        <li>Wählen Sie den Azure Machine Learning-Arbeitsbereich und dann auf der Seite <b>Übersicht</b> die Option <b>Studio starten</b> aus. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.</li>
+        <li>Schließen Sie alle Popupelemente, die in Studio angezeigt werden.</li>
+        <li>Navigieren Sie in Azure Machine Learning Studio zur Seite <b>Compute</b> und wählen Sie <b>+Neu</b> auf der Registerkarte <b>Computecluster</b>.</li>
+        <li>Wählen Sie dieselbe Region wie die, in der Sie Ihren Arbeitsbereich erstellt haben, und wählen Sie dann <b>Standard-DS11-v2</b> als Größe des virtuellen Computers. Wählen Sie <b>Weiter</b> aus.</li>
+        <li>Geben Sie dem Cluster einen eindeutigen Namen und wählen Sie dann <b>Erstellen</b>.</li>
+    </ol>
+    </details>
 
 ## Konfigurieren Ihrer Workstation mit Azure Machine Learning Studio
 

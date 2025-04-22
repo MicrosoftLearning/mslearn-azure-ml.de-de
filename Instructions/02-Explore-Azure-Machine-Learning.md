@@ -45,84 +45,52 @@ In dieser Übung stellen Sie Azure Machine Learning über das Azure-Portal berei
 1. Beachten Sie den Abschnitt **Ressourcen** mit u. a. den Optionen **Daten**, **Aufträge** und **Modelle**. Ressourcen werden beim Trainieren oder Bewerten eines Modells genutzt oder erstellt. Ressourcen dienen zum Trainieren, Bereitstellen und Verwalten Ihrer Modelle und können zum Nachverfolgen des Verlaufs mit Versionen versehen werden.
 1. Beachten Sie den Abschnitt **Verwalten** mit u. a. der Option **Compute**. Dies sind Infrastrukturressourcen, die zum Trainieren oder Bereitstellen eines Machine Learning-Modells benötigt werden.
 
-## Erstellen einer Trainingspipeline
+## Trainieren eines Modells mithilfe von AutoML
 
 Um die Nutzung der Daten- und anderen Ressourcen im Arbeitsbereich von Azure Machine Learning zu erkunden, lassen Sie uns versuchen, ein Modell zu trainieren.
 
-Eine schnelle Möglichkeit zum Erstellen einer Modelltrainingspipeline ist der **Designer**.
+Eine schnelle Möglichkeit, das beste Modell für eine Aufgabe auf der Grundlage Ihrer Daten zu trainieren und zu finden, ist die Verwendung der Option **AutoML**.
 
 > **Hinweis**: Es werden ggf. Popupelemente angezeigt, um Sie durch das Studio zu leiten. Sie können alle Popupelemente schließen und ignorieren und sich auf die Anweisungen dieses Labs konzentrieren.
 
-1. Wählen Sie in Studio links im Menü die Seite **Designer** aus.
-1. Wählen Sie das Beispiel **Regression – Automobile Price Prediction (Basic)** aus.
+1. Laden Sie die Schulungsdaten, die verwendet werden sollen, unter `https://github.com/MicrosoftLearning/mslearn-azure-ml/raw/refs/heads/main/Labs/02/diabetes-data.zip` herunter und entpacken Sie die komprimierten Dateien.
+1. Zurück im Azure Machine Learning Studio, wählen Sie die Seite **AutoML** aus dem Menü auf der linken Seite des Studios.
+1. Wählen Sie **+ Neuer automatisierter ML-Auftrag**.
+1. Legen Sie im Schritt **Grundeinstellungen** einen eindeutigen Namen für Ihren Trainingsauftrag fest und experimentieren Sie oder verwenden Sie die zugewiesenen Standardwerte. Wählen Sie **Weiter** aus.
+1. Im Schritt **Aufgabentyp & Daten** wählen Sie **Klassifizierung** als Aufgabentyp und wählen Sie **+Erstellen**, um Ihre Schulungsdaten hinzuzufügen.
+2. Auf der Seite **Datenressource erstellen** geben Sie im Schritt **Datentyp** einen Namen für Ihr Daten-Asset an (z. B. `training-data`) und wählen **Weiter**.
+1. Im Schritt **Datenquelle** wählen Sie **Aus lokalen Dateien**, um die zuvor heruntergeladenen Schulungsdaten hochzuladen. Wählen Sie **Weiter** aus.
+1. Überprüfen Sie im Schritt **Zielspeichertyp**, dass **Azure Blob Storage** als Typ des Datenspeichers ausgewählt ist und dass **workspaceblobstore** der ausgewählte Datenspeicher ist. Wählen Sie **Weiter** aus.
+1. Wählen Sie im Schritt **MLTable-Auswahl** die Option **Ordner hochladen** und wählen Sie den Ordner, den Sie aus der zuvor heruntergeladenen komprimierten Datei extrahiert haben. Wählen Sie **Weiter** aus.
+1. Überprüfen Sie die Einstellungen für Ihre Datenressource und wählen Sie **Erstellen**.
+1. Zurück im Schritt **Aufgabentyp & Daten**, wählen Sie die Daten, die Sie gerade hochgeladen haben, und wählen Sie **Weiter**.
 
-    Eine neue Pipeline wird angezeigt. Oben in der Pipeline wird eine Komponente zum Laden von **Automobile price data (raw)** angezeigt. Die Pipeline verarbeitet die Daten und trainiert ein lineares Regressionsmodell, um den Preis für jedes Fahrzeug vorherzusagen.
-1. Wählen Sie oben auf der Seite **Konfigurieren und Übermitteln** aus, um das Dialogfeld **Pipelineauftrag einrichten** zu öffnen.
-1. Wählen Sie auf der Seite **Grundlagen** die Option **Neu erstellen** aus, und legen Sie den Namen des Experiments auf `train-regression-designer` fest. Wählen Sie dann **Weiter** aus.
-1. Wählen Sie auf der Seite **Eingaben und Ausgaben** die Option **Weiter** aus, ohne Änderungen vorzunehmen.
-1. Auf der Seite **Laufzeiteinstellungen** wird ein Fehler angezeigt, da Sie nicht über eine Standardcomputeressource für die Ausführung der Pipeline verfügen.
+> **TIPP**: Möglicherweise müssen Sie den Typ **Klassifizierung** erneut auswählen, bevor Sie zum nächsten Schritt übergehen.
 
-Erstellen wir nun ein Computeziel.
+1. Im Schritt **Aufgabeneinstellungen** wählen Sie **Diabetisch (Boolesch) ** als Zielspalte und öffnen dann die Option **Zusätzliche Konfigurationseinstellungen konfigurieren**.
+1. Ändern Sie im Bereich **Zusätzliche Konfiguration** die primäre Metrik in **Genauigkeit**, und wählen Sie dann **Speichern**.
+1. Erweitern Sie die Option **Grenzen** und legen Sie die folgenden Eigenschaften fest:
+    * **Max. Testversuche**: 10
+    * **Zeitüberschreitung des Experiments (Minuten)**: 60
+    * **Zeitüberschreitung der Wiederholung (Minuten)**: 15
+    * **Vorzeitige Beendigung aktivieren**: Ausgewählt
 
-## Erstellen eines Computeziels
+1. Wählen Sie für **Testdaten** den **Train-Test-Split** und überprüfen Sie, dass der **Prozentsatz der Testdaten** 10 beträgt. Wählen Sie **Weiter** aus.
+1. Überprüfen Sie im Schritt **Compute**, dass der Computetyp **Serveless** und die Größe des virtuellen Computers **Standard-DS3-v2** ausgewählt ist. Wählen Sie **Weiter** aus.
 
-Zum Ausführen einer Workload im Azure Machine Learning-Arbeitsbereich benötigen Sie eine Computeressource. Einer der Vorteile von Azure Machine Learning ist die Möglichkeit zum Erstellen cloudbasierter Computeressourcen, auf denen Sie Experimente und Trainingsskripts im gewünschten Umfang ausführen können.
+> **Hinweis:** Compute-Instanzen und Computecluster basieren auf Standardimages virtueller Azure-Computer. Für diese Übung wird das Image *Standard_DS3_v2* empfohlen, um ein optimales Verhältnis zwischen Kosten und Leistung zu erreichen. Wenn Ihr Abonnement über ein Kontingent verfügt, das dieses Image nicht enthält, wählen Sie ein alternatives Image aus. Beachten Sie jedoch, dass ein größeres Image höhere Kosten verursachen kann und ein kleineres Image möglicherweise nicht ausreicht, um die Aufgaben auszuführen. Bitten Sie alternativ Ihren Azure-Administrator, Ihr Kontingent zu erhöhen.
 
-1. Wählen Sie in Azure Machine Learning Studio links im Menü die Seite **Compute** aus. Sie können vier Arten von Computeressourcen nutzen:
-    - **Compute-Instanz**: ein von Azure Machine Learning verwalteter virtueller Computer. Ideal für die Entwicklung, wenn Sie Daten erkunden und mit Machine Learning-Modellen iterativ experimentieren.
-    - **Computecluster**: Skalierbare VM-Cluster für die bedarfsgesteuerte Verarbeitung von Experimentcode Ideal für die Ausführung von Produktionscode oder automatisierten Aufträgen.
-    - **Kubernetes-Cluster**: Ein Kubernetes-Cluster, der zum Trainieren und Bewerten verwendet wird. Ideal für die Bereitstellung von Modellen in Echtzeit und im großen Stil.
-    - **Angefügte Computeressource**: Fügen Sie Ihre vorhandenen Azure-Computeressourcen an den Arbeitsbereich an, z. B. Virtual Machines- oder Azure Databricks-Cluster.
-
-    Zum Trainieren eines mit dem Designer erstellten Machine Learning-Modells können Sie entweder eine Compute-Instanz oder einen Computecluster verwenden.
-
-2. Fügen Sie auf der Registerkarte **Compute-Instanzen** eine neue Compute-Instanz mit den folgenden Einstellungen hinzu. 
-    - **Computename**: *Geben Sie einen eindeutigen Namen ein.*
-    - **Speicherort**: *automatisch derselbe wie für Ihren Arbeitsbereich*
-    - **VM-Typ**: `CPU`
-    - **VM-Größe:** : `Standard_DS11_v2`
-    - **Verfügbares Kontingent**: zeigt die verfügbaren dedizierten Kerne.
-    - **Erweiterte Einstellungen anzeigen**: Beachten Sie die folgenden Einstellungen, aber wählen Sie sie nicht aus:
-        - **SSH-Zugriff aktivieren**: `Unselected` *(Sie können über diese Option den Direktzugriff auf die VM mithilfe eines SSH-Clients aktivieren.)*
-        - **Virtuelles Netzwerk aktivieren**: `Unselected` *(Diese Option wird in der Regel in einer Unternehmensumgebung verwendet, um die Netzwerksicherheit zu verbessern.)*
-        - **Einem anderen Benutzer zuweisen**: `Unselected` *(Sie können mit dieser Option eine Compute-Instanz einem Data Scientist zuweisen.)*
-        - **Mit Setupskript bereitstellen**: Nicht ausgewählt `Unselected` *(Sie können mit dieser Option um ein Skript hinzufügen, das auf der Remote-Instanz nach ihrer Erstellung ausgeführt werden soll.)*
-        - **Weisen Sie eine verwaltete Identität hinzu**: `Unselected` *(Sie können systemseitig oder benutzerseitig zugewiesene verwaltete Identitäten anfügen, um Zugriff auf Ressourcen zu gewähren.)*
-
-3. Wählen Sie **Erstellen** aus. Warten Sie, bis die Compute-Instanz gestartet wurde und sich der Status in **Wird ausgeführt** geändert hat.
-
-> **Hinweis:** Compute-Instanzen und Computecluster basieren auf Standardimages virtueller Azure-Computer. Für diese Übung wird das Image *Standard_DS11_v2* empfohlen, um ein optimales Gleichgewicht zwischen Kosten und Leistung zu erzielen. Wenn Ihr Abonnement über ein Kontingent verfügt, das dieses Image nicht enthält, wählen Sie ein alternatives Image aus. Beachten Sie jedoch, dass ein größeres Image höhere Kosten verursachen kann und ein kleineres Image möglicherweise nicht ausreicht, um die Aufgaben auszuführen. Bitten Sie alternativ Ihren Azure-Administrator, Ihr Kontingent zu erhöhen.
-
-## Ausführen Ihrer Trainingspipeline
-
-Sie haben ein Computeziel erstellt und können nun Ihre Beispieltrainingspipeline im Designer ausführen.
-
-1. Wechseln Sie zur Seite **Designer**.
-1. Wählen Sie den Pipelineentwurf **Regression – Automobile Price Prediction (Basic)** aus.
-1. Wählen Sie oben auf der Seite **Konfigurieren und Übermitteln** aus, um das Dialogfeld **Pipelineauftrag einrichten** zu öffnen.
-1. Wählen Sie auf der Seite **Grundlagen** die Option **Neu erstellen** aus, und legen Sie den Namen des Experiments auf `train-regression-designer` fest. Wählen Sie dann **Weiter** aus.
-1. Wählen Sie auf der Seite **Eingaben und Ausgaben** die Option **Weiter** aus, ohne Änderungen vorzunehmen.
-1. Wählen Sie in den **Laufzeiteinstellungen** in der Dropdownliste **Computetyp auswählen** die Option *Compute-Instanz* und in der Dropdownliste **Azure ML-Compute-Instanz auswählen** Ihre neu erstellte Compute-Instanz aus.
-1. Wählen Sie **Überprüfen und übermitteln** aus, um den Pipelineauftrag zu überprüfen, und wählen Sie dann **Übermitteln** aus, um die Trainingspipeline auszuführen.
-
-Die Trainingspipeline wird nun an die Compute-Instanz übermittelt. Es dauert ungefähr 10 Minuten, bis die Pipeline abgeschlossen ist. Lassen Sie uns in der Zwischenzeit einige andere Seiten erkunden.
+1. Überprüfen Sie alle Ihre Einstellungen und wählen Sie **Schulungsauftrag senden**.
 
 ## Anzeigen des Verlaufs mithilfe von Aufträgen
 
-Jedes Mal, wenn Sie im Azure Machine Learning-Arbeitsbereich ein Skript oder eine Pipeline ausführen, wird dieser Vorgang als **Auftrag** aufgezeichnet. Mithilfe von Aufträgen können Sie die von Ihnen ausgeführten Workloads nachverfolgen und miteinander vergleichen. Aufträge gehören zu einem **Experiment**, mit dem Sie Auftragsausführungen gruppieren können.
+Nachdem Sie den Auftrag gesendet haben, werden Sie auf die Seite des Auftrags weitergeleitet. Mithilfe von Aufträgen können Sie die von Ihnen ausgeführten Workloads nachverfolgen und miteinander vergleichen. Aufträge gehören zu einem **Experiment**, mit dem Sie Auftragsausführungen gruppieren können. 
 
-1. Navigieren Sie in Azure Machine Learning Studio links im Menü zur Seite **Aufträge**.
-1. Wählen Sie das Experiment **train-regression-designer** aus, um dessen Auftragsausführungen einzusehen. Hier sehen Sie eine Übersicht aller Aufträge, die Teil dieses Experiments sind. Wenn Sie mehrere Trainingspipelines ausgeführt haben, können Sie in dieser Ansicht die Pipelines vergleichen und die beste bestimmen.
-1. Wählen Sie im Experiment **train-regression-designer** den letzten Auftrag aus.
-1. Beachten Sie, dass die Trainingspipeline gezeigt wird, in der Sie erkennen können, welche Komponenten erfolgreich ausgeführt wurden und welche nicht. Wenn der Auftrag noch ausgeführt wird, können Sie auch ermitteln, was gerade ausgeführt wird.
-1. Um die Details des Pipelineauftrags anzuzeigen, wählen Sie rechts oben **Auftragsübersicht** aus, die Übersicht **Pipelineaufträge** aufzuklappen.
-1. Beachten Sie, dass Sie in den Parametern unter **Übersicht** u. a. den Status des Auftrags, den Ersteller der Pipeline, den Zeitpunkt ihrer Erstellung und die Dauer der Ausführung der gesamten Pipeline finden können.
+1. Beachten Sie, dass Sie in den Parametern **Übersicht** unter anderem den Status des Auftrags finden, wer ihn erstellt hat, wann er erstellt wurde und wie lange seine Ausführung gedauert hat.
+1. Es sollte 10-20 Minuten dauern, bis das Training beendet ist. Wenn er abgeschlossen ist, können Sie auch die Details jedes einzelnen Komponentenlaufs, einschließlich der Ausgabe, ansehen. Schauen Sie sich die Jobseite an, um zu verstehen, wie die Modelle trainiert werden.
 
-    Wenn Sie ein Skript oder eine Pipeline als Auftrag ausführen, können Sie Eingaben festlegen und Ausgaben dokumentieren. Azure Machine Learning verfolgt auch automatisch die Eigenschaften Ihres Auftrags nach. Mithilfe von Aufträgen können Sie ihren Verlauf einfach einsehen, um zu verstehen, was Sie oder Ihre Kollegen bereits erledigt haben.
-
+    Azure Machine Learning erfasst automatisch die Eigenschaften Ihres Auftrags. Mithilfe von Aufträgen können Sie ihren Verlauf einfach einsehen, um zu verstehen, was Sie oder Ihre Kollegen bereits erledigt haben.
     Während des Experimentierens helfen Aufträge, die verschiedenen Modelle nachzuverfolgen, die Sie trainieren, um Modelle zu vergleichen und das beste zu bestimmen. Während der Produktion können Sie mithilfe von Aufträgen überprüfen, ob automatisierte Workloads wie erwartet ausgeführt wurden.
-
-1. Wenn Ihr Auftrag abgeschlossen ist, können Sie auch die Details jeder einzelnen Komponentenausführung einsehen, einschließlich der Ausgabe. Sie können die Pipeline nach Wunsch erkunden, um zu verstehen, wie das Modell trainiert wird.
 
 ## Löschen von Azure-Ressourcen
 
