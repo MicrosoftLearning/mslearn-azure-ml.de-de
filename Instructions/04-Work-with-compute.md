@@ -54,6 +54,26 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs verwenden Sie die Azure
 
 1. Warten Sie, bis der Befehl abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten.
 
+    <details>  
+    <summary><b>Tipp zur Fehlerbehebung</b>: Fehler bei der Erstellung des Arbeitsbereichs</summary><br>
+    <p>Wenn Sie beim Erstellen eines Arbeitsbereichs über die Befehlszeilenschnittstelle einen Fehler erhalten, müssen Sie die Ressource manuell bereitstellen:</p>
+    <ol>
+        <li>Wählen Sie auf der Startseite des Azure-Portals die Option <b>+ Erstellen einer Ressource</b>.</li>
+        <li>Suchen Sie nach <i>Maschinelles Lernen</i> und wählen Sie dann <b>Azure Machine Learning</b>. Klicken Sie auf <b>Erstellen</b>.</li>
+        <li>Erstellen Sie eine neue Azure Machine Learning-Ressource mit den folgenden Einstellungen: <ul>
+                <li><b>Abonnement:</b> <i>Geben Sie Ihr Azure-Abonnement an.</i></li>
+                <li><b>Ressourcengruppe</b>: rg-dp100-labs</li>
+                <li><b>Arbeitsbereichsname</b>: mlw-dp100-labs</li>
+                <li><b>Region:</b><i>Wählen Sie die nächstgelegene geografische Region aus.</i></li>
+                <li><b>Speicherkonto:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neues Speicherkonto erstellt.</i></li>
+                <li><b>Schlüsseltresor:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neuer Schlüsseltresor erstellt.</i></li>
+                <li><b>Application Insights:</b><i>Für Ihren Arbeitsbereich wird standardmäßig eine neue Application Insights-Ressource erstellt.</i></li>
+                <li><b>Containerregistrierung:</b> Keine (<i>wird automatisch erstellt, wenn Sie das erste Mal ein Modell in einem Container bereitstellen</i>)</li>
+            </ul>
+        <li>Wählen Sie <b>Review + create</b> und warten Sie, bis der Arbeitsbereich und die ihm zugeordneten Ressourcen erstellt sind - dies dauert in der Regel etwa 5 Minuten.</li>
+    </ol>
+    </details>
+
 ## Erstellen des Computesetupskripts
 
 Zum Ausführen von Notebooks im Azure Machine Learning-Arbeitsbereich benötigen Sie eine Compute-Instanz. Sie können ein Setupskript verwenden, um die Compute-Instanz bei der Erstellung zu konfigurieren.

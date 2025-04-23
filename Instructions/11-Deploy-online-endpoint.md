@@ -47,6 +47,34 @@ Zum Erstellen des Azure Machine Learning-Arbeitsbereichs, einer Compute-Instanz 
 
 1. Warten Sie, bis das Skript abgeschlossen ist. Dies dauert in der Regel etwa 5–10 Minuten.
 
+    <details>
+    <summary><b>Tipp zur Fehlerbehebung</b>: Fehler bei der Erstellung des Arbeitsbereichs</summary><br>
+    <p>Wenn Sie beim Ausführen des Setup-Skripts über die Befehlszeilenschnittstelle einen Fehler empfangen, müssen Sie die Ressourcen manuell bereitstellen:</p>
+    <ol>
+        <li>Wählen Sie auf der Startseite des Azure-Portals die Option <b>+ Erstellen einer Ressource</b>.</li>
+        <li>Suchen Sie nach <i>Maschinelles Lernen</i> und wählen Sie dann <b>Azure Machine Learning</b>. Klicken Sie auf <b>Erstellen</b>.</li>
+        <li>Erstellen Sie eine neue Azure Machine Learning-Ressource mit den folgenden Einstellungen: <ul>
+                <li><b>Abonnement:</b> <i>Geben Sie Ihr Azure-Abonnement an.</i></li>
+                <li><b>Ressourcengruppe</b>: rg-dp100-labs</li>
+                <li><b>Arbeitsbereichsname</b>: mlw-dp100-labs</li>
+                <li><b>Region:</b><i>Wählen Sie die nächstgelegene geografische Region aus.</i></li>
+                <li><b>Speicherkonto:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neues Speicherkonto erstellt.</i></li>
+                <li><b>Schlüsseltresor:</b><i>Für Ihren Arbeitsbereich wird standardmäßig ein neuer Schlüsseltresor erstellt.</i></li>
+                <li><b>Application Insights:</b><i>Für Ihren Arbeitsbereich wird standardmäßig eine neue Application Insights-Ressource erstellt.</i></li>
+                <li><b>Containerregistrierung:</b> Keine (<i>wird automatisch erstellt, wenn Sie das erste Mal ein Modell in einem Container bereitstellen</i>)</li>
+            </ul>
+        <li>Wählen Sie <b>Review + create</b> und warten Sie, bis der Arbeitsbereich und die ihm zugeordneten Ressourcen erstellt sind - dies dauert in der Regel etwa 5 Minuten.</li>
+        <li>Wählen Sie <b>Zur Ressource gehen</b> und auf der Seite <b>Übersicht</b>, wählen Sie <b>Studio starten</b>. In Ihrem Browser wird eine weitere Registerkarte geöffnet, auf der Azure Machine Learning Studio geöffnet wird.</li>
+        <li>Schließen Sie alle Popupelemente, die in Studio angezeigt werden.</li>
+        <li>Navigieren Sie in Azure Machine Learning Studio zur Seite <b>Compute</b> und wählen Sie <b>+Neu</b> unter der Registerkarte <b>Compute-Instanzen</b>.</li>
+        <li>Geben Sie der Instanz einen eindeutigen Namen und wählen Sie <b>Standard_DS11_v2</b> als Größe des virtuellen Computers.</li>
+        <li>Klicken Sie auf <b>Überprüfen und erstellen</b> und dann auf <b>Erstellen</b>.</li>
+        <li>Wählen Sie dann die Registerkarte <b>Computecluster</b> und wählen Sie <b>+ New</b>.</li>
+        <li>Wählen Sie dieselbe Region wie die, in der Sie Ihren Arbeitsbereich erstellt haben, und wählen Sie dann <b>Standard-DS11-v2</b> als Größe des virtuellen Computers. Wählen Sie <b>Weiter</b> aus.</li>
+        <li>Geben Sie dem Cluster einen eindeutigen Namen und wählen Sie dann <b>Erstellen</b>.</li>
+    </ol>
+    </details>
+
 ## Klonen der Labmaterialien
 
 Wenn Sie den Arbeitsbereich und die erforderlichen Computeressourcen erstellt haben, können Sie Azure Machine Learning Studio öffnen und die Labmaterialien in den Arbeitsbereich klonen. 
