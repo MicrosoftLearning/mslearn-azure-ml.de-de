@@ -109,7 +109,7 @@ Die Verwendung eines an eine Compute-Instanz angefügten Notebooks ist ideal fü
 
     > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet.
+1. Überprüfen Sie, ob das Notebook den **Python 3.10 - AzureML** Kernel verwendet.
 1. Führen Sie alle Zellen aus, um den Code zu untersuchen und ein Modell zu trainieren.
 1. Wählen Sie oben im Notebook das Symbol &#9776; aus, um das Menü**Notebook** anzuzeigen.
 1. Klappen Sie **Exportieren als** auf, und wählen Sie **Python (.py)** aus, um das Notebook in ein Python-Skript zu konvertieren.
