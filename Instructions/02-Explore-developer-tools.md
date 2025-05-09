@@ -185,7 +185,7 @@ Nachdem Sie sich vergewissert haben, dass die erforderliche Compute-Instanz erst
 
     > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Überprüfen Sie, ob das Notebook den **Python 3.8 - AzureML**-Kernel in der oberen rechten Ecke der Notebook-Umgebung verwendet. Jeder Kernel verfügt über ein eigenes Image mit einem eigenen vorinstallierten Paketsatz.
+1. Überprüfen Sie, ob das Notebook den Kernel **Python 3.10 – AzureML** in der oberen rechten Ecke der Notebook-Umgebung verwendet. Jeder Kernel verfügt über ein eigenes Image mit einem eigenen vorinstallierten Paketsatz.
 1. Führen Sie alle Zellen im Notebook aus.
 
 Im Azure Machine Learning-Arbeitsbereich wird ein neuer Auftrag erstellt. Der Auftrag verfolgt die in der Auftragskonfiguration definierten Eingaben, den verwendeten Code und die Ausgaben wie Metriken zum Auswerten des Modells nach.

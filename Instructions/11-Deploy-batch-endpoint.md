@@ -110,7 +110,7 @@ Der Code zum Erstellen des Endpunkts und Bereitstellen eines MLflow-Modells mit 
 
     > Wählen Sie **Authentifizieren** aus, und führen Sie die erforderlichen Schritte aus, wenn eine Benachrichtigung angezeigt wird, in der Sie zur Authentifizierung aufgefordert werden.
 
-1. Stellen Sie sicher, dass das Notebook den Kernel **Python 3.8 – AzureML** verwendet.
+1. Überprüfen Sie, ob das Notebook den **Python 3.10 - AzureML** Kernel verwendet.
 1. Führen Sie alle Zellen im Notebook aus.
 
 ## Löschen von Azure-Ressourcen
